@@ -30,7 +30,7 @@ jobs:
               -p "${{ secrets.VM_SSH_PORT }}" \
               -i key \
               "${{ secrets.VM_USER }}@${{ secrets.VM_HOST }}" \
-              "echo '✅ Conectado a VM'; whoami; hostname; pwd"
+              "echo '✅ Conectado a VM linux'; whoami; hostname; pwd"
 
           # Crear archivo de prueba
           ssh -o StrictHostKeyChecking=no \
