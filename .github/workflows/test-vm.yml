@@ -38,6 +38,6 @@ jobs:
               -p "${{ secrets.VM_SSH_PORT }}" \
               -i key \
               "${{ secrets.VM_USER }}@${{ secrets.VM_HOST }}" \
-              "echo 'prueba' > ~/index.html && echo '📁 Archivo creado' && cat ~/index.html"
+              "echo 'qertywtertwert' > ~/index.html && echo '📁 Archivo creado' && cat ~/index.html"
 
           echo "🎉 ¡Todo funcionó correctamente!"
