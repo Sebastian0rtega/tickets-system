@@ -1,0 +1,27 @@
+<h2>Panel Técnico</h2>
+
+<ul>
+{% for t in tickets %}
+    <li>
+        <b>{{ t.title }}</b> ({{ t.category }})<br>
+        Estado: <b>{{ t.status }}</b><br>
+        Usuario: {{ t.email }}<br>
+        {{ t.description }}
+
+        <form action="/tickets/estado" method="POST">
+            <input type="hidden" name="ticket_id" value="{{ t.id }}">
+
+            <select name="status">
+                <option value="ABIERTO">ABIERTO</option>
+                <option value="EN_PROCESO">EN PROCESO</option>
+                <option value="RESUELTO">RESUELTO</option>
+            </select>
+
+            <button type="submit">Cambiar estado</button>
+        </form>
+    </li>
+    <hr>
+{% endfor %}
+</ul>
+
+<a href="/logout">Cerrar sesión</a>

@@ -1,0 +1,23 @@
+<h2>Mis Tickets</h2>
+
+
+<a href="/tickets/crear">Crear nuevo ticket</a>
+
+<hr>
+
+{% if tickets %}
+<ul>
+{% for t in tickets %}
+    <li>
+        <b>{{ t["title"] }}</b> ({{ t["status"] }})<br>
+        {{ t["description"] }}<br>
+        <small>{{ t["category"] }}</small>
+    </li>
+{% endfor %}
+</ul>
+{% else %}
+<p>No tienes tickets aún.</p>
+{% endif %}
+
+
+<a href="/logout">Cerrar sesión</a>
