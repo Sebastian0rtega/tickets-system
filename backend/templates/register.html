@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h2>Login</h2>
-
-    {% if error %}
-        <p style="color:red">{{ error }}</p>
-    {% endif %}
+    <h2>Registro</h2>
 
     <form method="POST">
         <input type="email" name="email" placeholder="Correo" required>
         <input type="password" name="password" placeholder="Clave" required>
         <button type="submit">Entrar</button>
     </form>
-  <a href="/register">
-        <button>Registrarse</button>
+
+    <a href="/">
+    Volver al login
     </a>
-    
+
 </body>
 </html>

@@ -1,13 +1,24 @@
 from db import get_db
+from datetime import datetime
+
 
 def crear_ticket_db(title, description, category, user_id):
+
     db = get_db()
     cur = db.cursor()
+
     cur.execute("""
-        INSERT INTO tickets (title, description, category, status, user_id)
+        INSERT INTO tickets
+        (title, description, category, status, user_id)
         VALUES (?, ?, ?, 'ABIERTO', ?)
-    """, (title, description, category, user_id))
-    db.commit()
+    """,
+    (
+        title,
+        description,
+        category,
+        user_id
+    ))
+
 
 def get_tickets_by_user(user_id):
     db = get_db()

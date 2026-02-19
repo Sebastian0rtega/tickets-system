@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, session
 from models.user_model import *
+from base_datos import *
+
 
 auth_bp = Blueprint("auth", __name__)
 
@@ -23,6 +25,21 @@ def login():
             return redirect("/tecnico")
 
     return render_template("login.html")
+
+@auth_bp.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+
+        email = request.form["email"]
+        password = request.form["password"]
+
+        create_user(email, password)
+
+        return redirect("/")
+
+    return render_template("register.html")
+
 
 @auth_bp.route("/logout")
 def logout():
