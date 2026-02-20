@@ -18,7 +18,7 @@ def crear_ticket_db(title, description, category, user_id):
         category,
         user_id
     ))
-
+    db.commit()
 
 def get_tickets_by_user(user_id):
     db = get_db()

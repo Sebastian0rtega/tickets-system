@@ -19,7 +19,7 @@ def crear_ticket():
             categoria,
             session["user_id"]
         )
-
+    
         return redirect("/usuario")
     return render_template("crear_ticket.html")
 
