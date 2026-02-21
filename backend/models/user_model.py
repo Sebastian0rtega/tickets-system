@@ -1,5 +1,4 @@
 from db import get_db
-import sqlite3
 
 def get_user_by_credentials(email, password):
     db = get_db()
@@ -19,5 +18,16 @@ def create_user(email, password):
         INSERT INTO users (email, password, role)
         VALUES (?, ?, 'USER')
     """, (email, password))
+
+    db.commit()
+
+def create_user_with_role(email, password, role):
+
+    db = get_db()
+
+    db.execute("""
+        INSERT INTO users (email, password, role)
+        VALUES (?, ?, ?)
+    """, (email, password, role))
 
     db.commit()
